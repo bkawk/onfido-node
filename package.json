@@ -1,0 +1,26 @@
+{
+  "name": "onfido-node",
+  "version": "1.0.0",
+  "description": "node implementation of the onfido web sdk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkawk/onfido-node.git"
+  },
+  "keywords": [
+    "onfido"
+  ],
+  "author": "@bkawk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bkawk/onfido-node/issues"
+  },
+  "homepage": "https://github.com/bkawk/onfido-node#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
