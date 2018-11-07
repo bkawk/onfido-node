@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/bkawk/onfido-node#readme",
   "dependencies": {
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "unirest": "^0.5.1"
   }
 }
