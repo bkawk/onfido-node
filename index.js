@@ -2,37 +2,26 @@ var request = require('request');
 var unirest = require('unirest');
 
 
-// Try with request
+var url = 'https://api.onfido.com/v2/applicants';
+var method = 'POST';
+var headers = {'Authorization': 'Token token=<YOUR TOKEN IN HERE>'};    
+var body = {first_name:"Will",last_name:"Hill"};
 
-var headers = {'Authorization': 'Token token=<ENTER YOUR TOKEN HERE>'};    
-var dataString = ['first_name=John','last_name=Smith'];
-var options = {
-    url: 'https://api.onfido.com/v2/applicants',
-    method: 'POST',
-    headers: headers,
-    body: JSON.stringify(dataString)
-};
+
+//Try with request
 function callback(error, response, body) {
     console.log(body);
     console.log(response);
     console.log(error);
 }
-request(options, callback)
-
+request({url, method, headers, body}, callback)
 
 
 // Try with unirest
-
-
-function callback(error, response, body) {
-        console.log(body);
-        console.log(response);
-        console.log(error);
-}
-
-unirest
-.post('https://api.onfido.com/v2/applicants')
-.headers({'Authorization': 'Token token=<ENTER YOUR TOKEN HERE>'})
-.send({first_name:"Will",last_name:"Hill"})
-.end(callback)
+unirest.post(url)
+.headers(headers)
+.send(body)
+.end((response)=> {
+    console.log(response.body);
+  });
 
